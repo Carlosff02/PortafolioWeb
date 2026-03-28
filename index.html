@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Felipe Fernández Falcón | Desarrollador Full Stack</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // blue-500 (Acento principal)
+                        secondary: '#0f2a4a', // Azul corporativo medio (Tarjetas/Secciones)
+                        dark: '#061428', // Azul marino muy oscuro (Fondo principal)
+                        slate: {
+                            700: '#1c3d66', // Reemplaza bordes grises por bordes azulados
+                            800: '#133054', // Reemplaza fondos grises oscuros por azulados
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #061428; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c3d66; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2b5585; 
+        }
+        
+        .glass-nav {
+            background: rgba(6, 20, 40, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="text-white font-bold text-xl tracking-tight">CF<span class="text-primary">.</span></a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#sobre-mi" class="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1.5">
+                        <i data-lucide="user" class="w-4 h-4"></i> Sobre Mí
+                    </a>
+                    <a href="#habilidades" class="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1.5">
+                        <i data-lucide="code-2" class="w-4 h-4"></i> Habilidades
+                    </a>
+                    <a href="#experiencia" class="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1.5">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i> Experiencia
+                    </a>
+                    <a href="#educacion" class="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1.5">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i> Educación
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary border-b border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Sobre Mí</a>
+                <a href="#habilidades" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Habilidades</a>
+                <a href="#experiencia" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Experiencia</a>
+                <a href="#educacion" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Educación</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-20 md:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center min-h-screen">
+      
+    <!-- Hero Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Texto (Izquierda) -->
+            <div class="lg:col-span-7 order-2 lg:order-1">
+            <p class="text-primary font-medium tracking-wide mb-2 flex items-center gap-2">
+                <i data-lucide="terminal" class="w-5 h-5"></i> Hola, mi nombre es
+            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 tracking-tight">
+                Carlos Felipe<br/>
+                <span class="text-slate-400">Fernández Falcón.</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl font-medium text-slate-300 mb-6">
+                Desarrollador Web Full Stack & Estudiante de Ing. de Sistemas
+            </h2>
+            <p class="text-base md:text-lg text-slate-400 leading-relaxed mb-8 max-w-2xl">
+                Especializado en el desarrollo de aplicaciones empresariales escalables y orientadas a resultados. Construyo soluciones robustas optimizando procesos y diseñando arquitecturas mantenibles.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mb-10">
+                <a href="mailto:carlosfelipefdezfalcon@gmail.com" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 shadow-lg shadow-blue-500/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i> Contáctame
+                </a>
+                <a href="https://github.com/Carlosff02" target="_blank" class="bg-secondary hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 border border-slate-700">
+                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 -0.5 25 25" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.002.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z"></path></g></svg> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/carlos-felipe-fern%C3%A1ndez-falc%C3%B3n-441998263/" target="_blank" class="bg-secondary hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5 text-white"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> </g></svg> LinkedIn
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 text-sm text-slate-400">
+                <span class="flex items-center gap-2 bg-secondary/50 px-3 py-1.5 rounded-full border border-slate-700"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Lima, Perú</span>
+                <span class="flex items-center gap-2 bg-secondary/50 px-3 py-1.5 rounded-full border border-slate-700"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> 993 348 503</span>
+            </div>
+        </div>
+         <!-- Foto (Derecha) -->
+            <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center lg:justify-end">
+                <div class="relative group hero-image-container">
+                    <!-- Decoración de fondo -->
+                    <div class="absolute -inset-4 bg-primary/20 rounded-[2rem] blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
+                    
+                    <!-- Contenedor de imagen -->
+                    <div class="relative w-64 h-80 md:w-80 md:h-[28rem] rounded-2xl overflow-hidden border-2 border-slate-700 shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+                        <img 
+                            src="mi-photo.jpeg" 
+                            alt="Carlos Felipe Fernández Falcón" 
+                            class="w-full h-full object-cover"
+                        >
+                        <!-- Overlay sutil -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <!-- Elemento flotante decorativo -->
+                    <div class="absolute -bottom-6 -left-6 bg-secondary border border-slate-700 p-4 rounded-xl shadow-xl hidden md:block animate-bounce-slow">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider">Disponible para proyectos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-20 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i data-lucide="user-check" class="w-8 h-8 text-primary"></i> Perfil Profesional
+                </h2>
+                <div class="h-px bg-slate-700 flex-1"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-6 text-slate-300 leading-relaxed text-lg">
+                    <p>
+                        Soy un <strong>Desarrollador Web Full Stack</strong> y estudiante de Ingeniería de Sistemas, con un fuerte enfoque en la creación de aplicaciones empresariales que realmente escalen y aporten valor al negocio.
+                    </p>
+                    <p>
+                        Tengo experiencia sólida construyendo soluciones utilizando tecnologías modernas como <strong>Angular, TypeScript, Java y Spring Boot</strong>, además de integrar bases de datos relacionales como <strong>PostgreSQL</strong>.
+                    </p>
+                    <p>
+                        Me destaco por mi enfoque analítico y mi capacidad para resolver problemas complejos. Disfruto automatizando procesos, integrando servicios y aplicando siempre buenas prácticas de desarrollo y diseño de arquitecturas mantenibles.
+                    </p>
+                </div>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-primary/20 rounded-2xl transform translate-x-4 translate-y-4"></div>
+                    <div class="bg-secondary p-8 rounded-2xl relative border border-slate-700 shadow-xl">
+                        <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                            <i data-lucide="globe-2" class="w-5 h-5 text-primary"></i> Idiomas
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-slate-300 font-medium flex items-center gap-2">
+                                        <i data-lucide="languages" class="w-4 h-4 text-slate-500"></i> Español
+                                    </span>
+                                    <span class="text-primary text-sm font-semibold">Nativo</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-slate-300 font-medium flex items-center gap-2">
+                                        <i data-lucide="flag" class="w-4 h-4 text-slate-500"></i> Inglés
+                                    </span>
+                                    <span class="text-primary text-sm font-semibold">Avanzado (C1)</span>
+                                </div>
+                                <div class="w-full bg-slate-800 rounded-full h-2">
+                                    <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-1 flex items-center gap-1">
+                                    <i data-lucide="scroll-text" class="w-3 h-3"></i> Certificación EF SET
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i data-lucide="cpu" class="w-8 h-8 text-primary"></i> Habilidades Técnicas
+                </h2>
+                <div class="h-px bg-slate-700 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Frontend -->
+                <div class="bg-secondary border border-slate-700 rounded-xl p-6 hover:border-primary/50 transition-all hover:-translate-y-1">
+                    <div class="bg-dark/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-primary">
+                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Frontend</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4 text-primary"></i> Angular</li>
+                        <li class="flex items-center gap-2"><i data-lucide="file-code-2" class="w-4 h-4 text-primary"></i> HTML5 & CSS3</li>
+                        <li class="flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4 text-primary"></i> Tailwind CSS</li>
+                    </ul>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-secondary border border-slate-700 rounded-xl p-6 hover:border-primary/50 transition-all hover:-translate-y-1">
+                    <div class="bg-dark/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-primary">
+                        <i data-lucide="server" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Backend</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center gap-2"><i data-lucide="box" class="w-4 h-4 text-primary"></i> Spring Boot</li>
+                        <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-primary"></i> Spring Security</li>
+                        <li class="flex items-center gap-2"><i data-lucide="webhook" class="w-4 h-4 text-primary"></i> APIs RESTful</li>
+                    </ul>
+                </div>
+
+                <!-- Lenguajes -->
+                <div class="bg-secondary border border-slate-700 rounded-xl p-6 hover:border-primary/50 transition-all hover:-translate-y-1">
+                    <div class="bg-dark/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-primary">
+                        <i data-lucide="binary" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Lenguajes</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-dark text-slate-300 rounded-full text-xs border border-slate-700 flex items-center gap-1.5"><i data-lucide="coffee" class="w-3 h-3"></i> Java</span>
+                        <span class="px-3 py-1 bg-dark text-slate-300 rounded-full text-xs border border-slate-700">TypeScript</span>
+                        <span class="px-3 py-1 bg-dark text-slate-300 rounded-full text-xs border border-slate-700">JavaScript</span>
+                        <span class="px-3 py-1 bg-dark text-slate-300 rounded-full text-xs border border-slate-700">Python</span>
+                        <span class="px-3 py-1 bg-dark text-slate-300 rounded-full text-xs border border-slate-700">C#</span>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos & Otros -->
+                <div class="bg-secondary border border-slate-700 rounded-xl p-6 hover:border-primary/50 transition-all hover:-translate-y-1">
+                    <div class="bg-dark/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4 text-primary">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">BD & Herramientas</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li class="flex items-center gap-2"><i data-lucide="hard-drive" class="w-4 h-4 text-primary"></i> PostgreSQL</li>
+                        <li class="flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-primary"></i> Git & GitHub</li>
+                        <li class="flex items-center gap-2"><i data-lucide="container" class="w-4 h-4 text-primary"></i> Docker</li>
+                        <li class="flex items-center gap-2"><i data-lucide="settings-2" class="w-4 h-4 text-primary"></i> Microservicios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-20 bg-secondary/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i> Experiencia Profesional
+                </h2>
+                <div class="h-px bg-slate-700 flex-1"></div>
+            </div>
+
+            <!-- Timeline Item -->
+            <div class="relative border-l border-slate-700 ml-3 md:ml-6 pl-6 md:pl-10 space-y-12 pb-8">
+                
+                <!-- Main Job Node -->
+                <div class="relative">
+                    <div class="absolute -left-8 md:-left-12 mt-1.5 w-4 h-4 rounded-full bg-primary ring-4 ring-dark"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Desarrollador Web Full Stack</h3>
+                            <h4 class="text-lg text-primary font-medium flex items-center gap-2 mt-1">
+                                <i data-lucide="building-2" class="w-4 h-4"></i> JACH PERÚ CORP SAC
+                            </h4>
+                        </div>
+                        <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm font-medium mt-2 md:mt-0 border border-slate-700 w-max flex items-center gap-2">
+                            <i data-lucide="calendar" class="w-4 h-4 text-primary"></i> Oct. 2024 – Actualidad
+                        </span>
+                    </div>
+
+                    <!-- Tech Stack used in job -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs font-medium text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700 flex items-center gap-1.5"><i data-lucide="layout" class="w-3 h-3"></i> Angular</span>
+                        <span class="text-xs font-medium text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700 flex items-center gap-1.5"><i data-lucide="terminal" class="w-3 h-3"></i> Java</span>
+                        <span class="text-xs font-medium text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700 flex items-center gap-1.5"><i data-lucide="database" class="w-3 h-3"></i> PostgreSQL</span>
+                    </div>
+
+                    <!-- Projects inside job -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        
+                        <!-- Project 1 -->
+                        <div class="bg-dark p-6 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors">
+                            <h5 class="text-white font-semibold flex items-center gap-2 mb-3">
+                                <i data-lucide="scan-line" class="w-5 h-5 text-primary"></i>
+                                Sistema Integral de Gestión Documental
+                            </h5>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Flujo completo: recepción, digitalización, indexación y control de calidad.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Digitación asistida con formularios dinámicos y validaciones complejas.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Navegación inteligente entre regiones mejorando la precisión en un 40%.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-dark p-6 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors">
+                            <h5 class="text-white font-semibold flex items-center gap-2 mb-3">
+                                <i data-lucide="bar-chart-3" class="w-5 h-5 text-primary"></i>
+                                Plataforma de Gestión & Métricas
+                            </h5>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Búsqueda avanzada y edición de metadatos con trazabilidad total.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Dashboard de métricas: actividad de usuarios y análisis de carga masiva.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Gestión eficiente de almacenamiento para grandes volúmenes de documentos.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="bg-dark p-6 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors lg:col-span-2">
+                            <h5 class="text-white font-semibold flex items-center gap-2 mb-3">
+                                <i data-lucide="users-2" class="w-5 h-5 text-primary"></i>
+                                CRM Empresarial <span class="text-[10px] uppercase font-bold tracking-wider bg-primary/20 text-primary px-2 py-0.5 rounded ml-2">Beta</span>
+                            </h5>
+                            <ul class="space-y-2 text-sm text-slate-400">
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Módulo Kanban para seguimiento de oportunidades comerciales.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i data-lucide="circle-dot" class="w-3 h-3 mt-1 text-primary shrink-0"></i>
+                                    <span>Administración centralizada de clientes y contactos estratégicos.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="educacion" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="text-3xl font-bold text-white flex items-center gap-3">
+                    <i data-lucide="graduation-cap" class="w-8 h-8 text-primary"></i> Educación y Certificaciones
+                </h2>
+                <div class="h-px bg-slate-700 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                
+                <!-- Education -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="university" class="w-5 h-5 text-primary"></i> Formación Académica
+                    </h3>
+                    
+                    <div class="bg-secondary border border-slate-700 rounded-xl p-6 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110"></div>
+                        <div class="relative z-10">
+                            <h4 class="text-lg font-bold text-white">Ingeniería de Sistemas e Informática</h4>
+                            <p class="text-primary font-medium mt-1">UTP – Universidad Tecnológica del Perú</p>
+                            <p class="text-slate-400 text-sm mt-2 flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-slate-500"></i> 2023 – Actualidad
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold text-white mt-10 mb-6 flex items-center gap-2">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-primary"></i> Formación Complementaria
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="bg-secondary/50 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-600 transition-colors">
+                            <div class="bg-dark p-2 rounded text-primary"><i data-lucide="globe" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="text-white font-medium">Full Stack Development</h5>
+                                <p class="text-slate-400 text-sm flex items-center gap-1.5"><i data-lucide="award" class="w-3 h-3"></i> freeCodeCamp</p>
+                            </div>
+                        </li>
+                        <li class="bg-secondary/50 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-600 transition-colors">
+                            <div class="bg-dark p-2 rounded text-primary"><i data-lucide="database-zap" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="text-white font-medium">Backend con Java y Spring Boot</h5>
+                                <p class="text-slate-400 text-sm flex items-center gap-1.5"><i data-lucide="award" class="w-3 h-3"></i> Alura Latam</p>
+                            </div>
+                        </li>
+                        <li class="bg-secondary/50 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-600 transition-colors">
+                            <div class="bg-dark p-2 rounded text-primary"><i data-lucide="code-2" class="w-5 h-5"></i></div>
+                            <div>
+                                <h5 class="text-white font-medium">Python (Básico e Intermedio)</h5>
+                                <p class="text-slate-400 text-sm flex items-center gap-1.5"><i data-lucide="award" class="w-3 h-3"></i> DataCamp</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="medal" class="w-5 h-5 text-primary"></i> Certificaciones Destacadas
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-secondary border border-slate-700 rounded-xl p-5 hover:border-primary/50 transition-all flex justify-between items-center group">
+                            <div class="flex items-center gap-4">
+                                <i data-lucide="award" class="w-6 h-6 text-primary group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Front End Development Libraries</h4>
+                                    <p class="text-slate-400 text-xs mt-0.5">freeCodeCamp</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700">2025</span>
+                        </div>
+                        
+                        <div class="bg-secondary border border-slate-700 rounded-xl p-5 hover:border-primary/50 transition-all flex justify-between items-center group">
+                            <div class="flex items-center gap-4">
+                                <i data-lucide="badge-check" class="w-6 h-6 text-primary group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Oracle Next Education – Backend</h4>
+                                    <p class="text-slate-400 text-xs mt-0.5">Alura</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700">2025</span>
+                        </div>
+                        
+                        <div class="bg-secondary border border-slate-700 rounded-xl p-5 hover:border-primary/50 transition-all flex justify-between items-center group">
+                            <div class="flex items-center gap-4">
+                                <i data-lucide="scroll" class="w-6 h-6 text-primary group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Java Web con Spring Boot</h4>
+                                    <p class="text-slate-400 text-xs mt-0.5">Alura</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700">2024</span>
+                        </div>
+
+                        <div class="bg-secondary border border-slate-700 rounded-xl p-5 hover:border-primary/50 transition-all flex justify-between items-center group">
+                            <div class="flex items-center gap-4">
+                                <i data-lucide="box" class="w-6 h-6 text-primary group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Java Orientado a Objetos</h4>
+                                    <p class="text-slate-400 text-xs mt-0.5">Alura</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700">2024</span>
+                        </div>
+
+                        <div class="bg-secondary border border-slate-700 rounded-xl p-5 hover:border-primary/50 transition-all flex justify-between items-center group">
+                            <div class="flex items-center gap-4">
+                                <i data-lucide="terminal-square" class="w-6 h-6 text-primary group-hover:scale-110 transition-transform"></i>
+                                <div>
+                                    <h4 class="text-white font-medium">Python Specialist</h4>
+                                    <p class="text-slate-400 text-xs mt-0.5">DataCamp</p>
+                                </div>
+                            </div>
+                            <span class="text-[10px] font-bold text-slate-400 bg-dark px-2 py-1 rounded border border-slate-700">2024</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+            <div class="text-2xl font-bold text-white mb-6">
+                CF<span class="text-primary">.</span>
+            </div>
+            
+            <div class="flex gap-6 mb-8">
+                <a href="https://github.com/Carlosff02" target="_blank" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all shadow-lg hover:shadow-primary/20">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 -0.5 25 25" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m12.301 0h.093c2.242 0 4.34.613 6.137 1.68l-.055-.031c1.871 1.094 3.386 2.609 4.449 4.422l.031.058c1.04 1.769 1.654 3.896 1.654 6.166 0 5.406-3.483 10-8.327 11.658l-.087.026c-.063.02-.135.031-.209.031-.162 0-.312-.054-.433-.144l.002.001c-.128-.115-.208-.281-.208-.466 0-.005 0-.01 0-.014v.001q0-.048.008-1.226t.008-2.154c.007-.075.011-.161.011-.249 0-.792-.323-1.508-.844-2.025.618-.061 1.176-.163 1.718-.305l-.076.017c.573-.16 1.073-.373 1.537-.642l-.031.017c.508-.28.938-.636 1.292-1.058l.006-.007c.372-.476.663-1.036.84-1.645l.009-.035c.209-.683.329-1.468.329-2.281 0-.045 0-.091-.001-.136v.007c0-.022.001-.047.001-.072 0-1.248-.482-2.383-1.269-3.23l.003.003c.168-.44.265-.948.265-1.479 0-.649-.145-1.263-.404-1.814l.011.026c-.115-.022-.246-.035-.381-.035-.334 0-.649.078-.929.216l.012-.005c-.568.21-1.054.448-1.512.726l.038-.022-.609.384c-.922-.264-1.981-.416-3.075-.416s-2.153.152-3.157.436l.081-.02q-.256-.176-.681-.433c-.373-.214-.814-.421-1.272-.595l-.066-.022c-.293-.154-.64-.244-1.009-.244-.124 0-.246.01-.364.03l.013-.002c-.248.524-.393 1.139-.393 1.788 0 .531.097 1.04.275 1.509l-.01-.029c-.785.844-1.266 1.979-1.266 3.227 0 .025 0 .051.001.076v-.004c-.001.039-.001.084-.001.13 0 .809.12 1.591.344 2.327l-.015-.057c.189.643.476 1.202.85 1.693l-.009-.013c.354.435.782.793 1.267 1.062l.022.011c.432.252.933.465 1.46.614l.046.011c.466.125 1.024.227 1.595.284l.046.004c-.431.428-.718 1-.784 1.638l-.001.012c-.207.101-.448.183-.699.236l-.021.004c-.256.051-.549.08-.85.08-.022 0-.044 0-.066 0h.003c-.394-.008-.756-.136-1.055-.348l.006.004c-.371-.259-.671-.595-.881-.986l-.007-.015c-.198-.336-.459-.614-.768-.827l-.009-.006c-.225-.169-.49-.301-.776-.38l-.016-.004-.32-.048c-.023-.002-.05-.003-.077-.003-.14 0-.273.028-.394.077l.007-.003q-.128.072-.08.184c.039.086.087.16.145.225l-.001-.001c.061.072.13.135.205.19l.003.002.112.08c.283.148.516.354.693.603l.004.006c.191.237.359.505.494.792l.01.024.16.368c.135.402.38.738.7.981l.005.004c.3.234.662.402 1.057.478l.016.002c.33.064.714.104 1.106.112h.007c.045.002.097.002.15.002.261 0 .517-.021.767-.062l-.027.004.368-.064q0 .609.008 1.418t.008.873v.014c0 .185-.08.351-.208.466h-.001c-.119.089-.268.143-.431.143-.075 0-.147-.011-.214-.032l.005.001c-4.929-1.689-8.409-6.283-8.409-11.69 0-2.268.612-4.393 1.681-6.219l-.032.058c1.094-1.871 2.609-3.386 4.422-4.449l.058-.031c1.739-1.034 3.835-1.645 6.073-1.645h.098-.005zm-7.64 17.666q.048-.112-.112-.192-.16-.048-.208.032-.048.112.112.192.144.096.208-.032zm.497.545q.112-.08-.032-.256-.16-.144-.256-.048-.112.08.032.256.159.157.256.047zm.48.72q.144-.112 0-.304-.128-.208-.272-.096-.144.08 0 .288t.272.112zm.672.673q.128-.128-.064-.304-.192-.192-.32-.048-.144.128.064.304.192.192.32.044zm.913.4q.048-.176-.208-.256-.24-.064-.304.112t.208.24q.24.097.304-.096zm1.009.08q0-.208-.272-.176-.256 0-.256.176 0 .208.272.176.256.001.256-.175zm.929-.16q-.032-.176-.288-.144-.256.048-.224.24t.288.128.225-.224z"></path></g></svg>
+                   
+                </a>
+                <a href="https://www.linkedin.com/in/carlos-felipe-fern%C3%A1ndez-falc%C3%B3n-441998263/" target="_blank" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all shadow-lg hover:shadow-primary/20">
+                    <svg class="w-5 h-5 text-white"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 382 382" xml:space="preserve" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#0077B7;" d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889 C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056 H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806 c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1 s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73 c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079 c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426 c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472 L341.91,330.654L341.91,330.654z"></path> </g></svg>
+                </a>
+                <a href="mailto:carlosfelipefdezfalcon@gmail.com" class="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all shadow-lg hover:shadow-primary/20">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-4 text-slate-400 text-sm text-center mb-8">
+                <span class="flex items-center justify-center gap-2 px-4 py-2 bg-dark/50 rounded-lg border border-slate-800"><i data-lucide="phone" class="w-4 h-4 text-primary"></i> 993 348 503</span>
+                <span class="flex items-center justify-center gap-2 px-4 py-2 bg-dark/50 rounded-lg border border-slate-800"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Lima, Perú</span>
+            </div>
+            
+            <p class="text-slate-500 text-[12px] flex items-center gap-1">
+                <i data-lucide="code" class="w-3 h-3"></i> <span id="year"></span> Carlos Felipe Fernández Falcón. Construido con Angular & Tailwind.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
